@@ -96,12 +96,11 @@ def create_team_heatmap(df_pass):
         x=team_data['x'],
         y=team_data['y'],
         color='red',
-        # fill=True,
+        fill=True,
         alpha=0.7,
         levels=10,
         cmap=custom_cmap,
         n_levels=40,
-        shade=True,
         ax=ax
     )
 
