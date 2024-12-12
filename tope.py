@@ -12,38 +12,38 @@ import matplotlib.colors as mcolors
 import io
 from matplotlib import pyplot as plt
 
-if st.button("Refresh Data"):
-        st.cache_data.clear()
+# if st.button("Refresh Data"):
+#         st.cache_data.clear()
 
 DOCUMENT_ID = '11GOW9_pzJmAAAlvWKFYdh7YCc0lF4U7w'
 
 
-@st.cache_data
+# @st.cache_data
 def fetch_data(sheet_name):
     url = f'https://docs.google.com/spreadsheets/d/{DOCUMENT_ID}/gviz/tq?tqx=out:csv&sheet={sheet_name}'
     return pd.read_csv(url)
 
-# def download_plot(fig, file_name, mime="image/png", facecolor=None):
-#     """Downloads a Matplotlib figure as a PNG image.
+def download_plot(fig, file_name, mime="image/png", facecolor=None):
+    """Downloads a Matplotlib figure as a PNG image.
 
-#     Args:
-#         fig (matplotlib.figure.Figure): The figure to download.
-#         file_name (str): The desired filename for the downloaded image.
-#         mime (str, optional): The MIME type of the image. Defaults to "image/png".
-#         facecolor (str, optional): The background color for the plot (used for heatmaps). Defaults to None.
-#     """
-#     buffer = io.BytesIO()
-#     if facecolor:
-#         # Set background color for heatmaps
-#         fig.set_facecolor(facecolor)
-#     fig.savefig(buffer, format='png', dpi=300, bbox_inches='tight')
-#     buffer.seek(0)
-#     st.download_button(
-#         label="Download",
-#         data=buffer,
-#         file_name=file_name,
-#         mime=mime
-#     )
+    Args:
+        fig (matplotlib.figure.Figure): The figure to download.
+        file_name (str): The desired filename for the downloaded image.
+        mime (str, optional): The MIME type of the image. Defaults to "image/png".
+        facecolor (str, optional): The background color for the plot (used for heatmaps). Defaults to None.
+    """
+    buffer = io.BytesIO()
+    if facecolor:
+        # Set background color for heatmaps
+        fig.set_facecolor(facecolor)
+    fig.savefig(buffer, format='png', dpi=300, bbox_inches='tight')
+    buffer.seek(0)
+    st.download_button(
+        label="Download",
+        data=buffer,
+        file_name=file_name,
+        mime=mime
+    )
 
 
 
@@ -113,7 +113,7 @@ def create_team_heatmap(df_pass):
 
     # Display the heatmap in Streamlit
     st.pyplot(fig_heat)
-    # download_plot(fig_heat, f"{team_heat}_heatmap.png", facecolor=pitch.pitch_color)
+    download_plot(fig_heat, f"{team_heat}_heatmap.png", facecolor=pitch.pitch_color)
 
 df_new = fetch_data("shoot")
 
@@ -218,7 +218,7 @@ ax.legend(labelspacing=2, loc="upper center", fontsize=5, bbox_to_anchor=(0.5, -
 add_logo_on_heatmap(ax, "lagos-liga-blue.png", zoom=0.02, x_pos=0.5, y_pos=0.5, alpha=0.15)
 st.pyplot(fig)
 
-# download_plot(fig, f"{team1}_vs_{team2}_shot_map.png")
+download_plot(fig, f"{team1}_vs_{team2}_shot_map.png")
 def main():
     
 
