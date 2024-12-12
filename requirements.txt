@@ -1,32 +1,9 @@
-altair==5.5.0
-attrs==24.2.0
-blinker==1.9.0
-cachetools==5.5.0
-certifi==2024.8.30
-charset-normalizer==3.4.0
-click==8.1.7
-cycler==0.12.1
-fonttools==4.55.3
-gitdb==4.0.11
-GitPython==3.1.43
-idna==3.10
-Jinja2==3.1.4
-jsonschema==4.23.0
-jsonschema-specifications==2024.10.1
-kiwisolver==1.4.7
-markdown-it-py==3.0.0
-MarkupSafe==3.0.2
-matplotlib==3.9.3
-mdurl==0.1.2
-mplsoccer==1.4.0  # Specify the version if you need it, or remove for the latest
-numpy==1.26.4
-packaging==24.2
-pandas==2.2.3
-pillow==11.0.0
-plotly==5.24.1
-referencing==0.35.1
-requests==2.32.3
-scipy==1.10.1  # Corrected version of scipy
-seaborn==0.13.2
-six==1.17.0
-streamlit==1.21.0  # Add the version if you need it, or remove for the latest
+streamlit 
+matplotlib
+numpy
+pandas
+openpyxl
+seaborn
+plotly
+mplsoccer
+
