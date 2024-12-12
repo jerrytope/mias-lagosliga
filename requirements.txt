@@ -19,7 +19,7 @@ MarkupSafe==3.0.2
 matplotlib==3.9.3
 mdurl==0.1.2
 mplsoccer
-numpy==2.2.0
+numpy==1.26.4
 packaging==24.2
 pandas==2.2.3
 pillow==11.0.0
